@@ -1,10 +1,12 @@
 package logic
 
 import (
+	"CatDisk/core/models"
 	"context"
+	"errors"
 
-	"core/internal/svc"
-	"core/internal/types"
+	"CatDisk/core/internal/svc"
+	"CatDisk/core/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -24,7 +26,17 @@ func NewUserDetailLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserDe
 }
 
 func (l *UserDetailLogic) UserDetail(req *types.UserDetailRequest) (resp *types.UserDetailReply, err error) {
-	// todo: add your logic here and delete this line
+	resp = &types.UserDetailReply{}
+	ub := new(models.UserBasic)
+	has, err := l.svcCtx.Engine.Where("identity=?", req.Identity).Get(ub)
+	if err != nil {
+		return nil, err
+	}
+	if !has {
+		return nil, errors.New("user not found")
+	}
+	resp.Name = ub.Name
+	resp.Email = ub.Email
 
 	return
 }

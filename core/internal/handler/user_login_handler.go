@@ -3,9 +3,9 @@ package handler
 import (
 	"net/http"
 
-	"core/internal/logic"
-	"core/internal/svc"
-	"core/internal/types"
+	"CatDisk/core/internal/logic"
+	"CatDisk/core/internal/svc"
+	"CatDisk/core/internal/types"
 	"github.com/zeromicro/go-zero/rest/httpx"
 )
 

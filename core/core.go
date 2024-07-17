@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 
-	"core/internal/config"
-	"core/internal/handler"
-	"core/internal/svc"
+	"CatDisk/core/internal/config"
+	"CatDisk/core/internal/handler"
+	"CatDisk/core/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

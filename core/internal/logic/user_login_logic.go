@@ -1,14 +1,14 @@
 package logic
 
 import (
+	"CatDisk/core/define"
+	"CatDisk/core/helper"
+	"CatDisk/core/models"
 	"context"
-	"core/define"
-	"core/helper"
-	"core/models"
 	"errors"
 
-	"core/internal/svc"
-	"core/internal/types"
+	"CatDisk/core/internal/svc"
+	"CatDisk/core/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
